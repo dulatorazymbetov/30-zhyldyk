@@ -1148,6 +1148,12 @@ window.onYouTubeIframeAPIReady = function () {
   });
 };
 
+function startPlay() {
+  if (!ytReady) return;
+  ytPlayer.setVolume(75);
+  ytPlayer.playVideo();
+}
+
 function onReady(e) {
   ytReady = true;
   e.target.setVolume(75);
@@ -1175,7 +1181,7 @@ function onState(e) {
 overlayBtn.addEventListener('click', () => {
   overlay.classList.add('hide');
   shouldPlay = true;
-  if (ytReady) ytPlayer.playVideo();
+  if (ytReady) { ytPlayer.setVolume(75); ytPlayer.playVideo(); }
 });
 
 /* ── Кнопка паузы/плея в баре ── */
