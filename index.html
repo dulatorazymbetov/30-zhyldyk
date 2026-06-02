@@ -463,16 +463,15 @@ body {
   margin: 0 auto;
 }
 .venue-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.4rem;
-  margin-top: 3rem;
-  align-items: start;
-}
-.venue-info {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.6rem;
+  margin-top: 3rem;
+}
+.venue-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
 }
 .venue-card {
   background: var(--white);
@@ -541,7 +540,7 @@ body {
   overflow: hidden;
   border: 1px solid rgba(196,154,42,0.22);
   box-shadow: 0 8px 40px var(--shadow);
-  aspect-ratio: 4/3;
+  height: 400px;
   opacity: 0; transform: translateY(22px);
   transition: opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s;
 }
@@ -553,12 +552,12 @@ body {
   border: none;
 }
 
-@media (max-width: 700px) {
-  .venue-grid {
+@media (max-width: 660px) {
+  .venue-info {
     grid-template-columns: 1fr;
   }
   .venue-map-wrap {
-    aspect-ratio: 4/3;
+    height: 280px;
   }
 }
 
